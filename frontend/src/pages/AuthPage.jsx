@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-// ✅ Use environment variable for API URL
-const API_URL = process.env.REACT_APP_API_URL;
 
 const AuthPage = () => {
   const navigate = useNavigate();
@@ -41,7 +39,7 @@ const AuthPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/api/users/login`, {
+      const res = await axios.post(`https://tal-bank-sandy.vercel.app/api/users/login`, {
         accountNumber: formData.accountNumber,
         password: formData.password,
       });
@@ -69,7 +67,7 @@ const AuthPage = () => {
         return;
       }
 
-      const res = await axios.post(`${API_URL}/api/users/register`, {
+      const res = await axios.post(`https://tal-bank-sandy.vercel.app/api/users/register`, {
         phoneNumber: verifiedPhone,
         firstName,
         lastName,

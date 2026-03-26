@@ -247,8 +247,78 @@ const Register = () => {
 
                 )}
 
-              
-               
+                {/* LOGIN */}
+                {isLogin && (
+
+                    <form className="w-full" onSubmit={handleLogin}>
+
+                        <input
+                            type="text"
+                            name="accountNumber"
+                            placeholder="Account Number"
+                            value={formData.accountNumber}
+                            maxLength={10}
+                            onChange={handleChange}
+                            className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
+                        />
+
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                placeholder="Enter Password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
+                            />
+
+                            <span
+                                onClick={() => setShowPassword((prev) => !prev)}
+                                className="absolute right-4 top-7 transform -translate-y-1/2 cursor-pointer text-gray-500"
+                            >
+                                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            </span>
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="w-full bg-amber-500 text-white py-4 rounded-full font-semibold mb-6"
+                        >
+                            LOGIN
+                        </button>
+
+                        {/* Switch */}
+
+                        <div className="text-center text-sm text-gray-600 mt-6">
+
+                            {isLogin ? (
+                                <>
+                                    Don't have an account?
+                                    <span
+                                        onClick={() => setIsLogin(false)}
+                                        className="text-amber-500 ml-1 cursor-pointer"
+                                    >
+                                        Register
+                                    </span>
+                                </>
+                            ) : (
+                                <>
+                                    Already have an account?
+                                    <span
+                                        onClick={() => setIsLogin(true)}
+                                        className="text-amber-500 ml-1 cursor-pointer"
+                                    >
+                                        Login
+                                    </span>
+                                </>
+                            )}
+
+                        </div>
+
+
+                    </form>
+
+                )}
             </div>
 
 
