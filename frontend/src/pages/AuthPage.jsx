@@ -1,90 +1,64 @@
-
 import React, { useState, useEffect } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import PhoneInput from "../component/PhoneInput";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const AuthPage = () => {
+// ✅ Use environment variable for API URL
+const API_URL = process.env.REACT_APP_API_URL;
 
+const AuthPage = () => {
   const navigate = useNavigate();
 
   const [isLogin, setIsLogin] = useState(false);
-  const [accountNumber, setAccountNumber] = useState("")
   const [showPassword, setShowPassword] = useState(false);
+  const [accountNumber, setAccountNumber] = useState("");
 
   const [formData, setFormData] = useState({
     accountNumber: "",
-    password: ""
+    password: "",
   });
 
-  useEffect(() => {
-    setFormData({
-      accountNumber: "",
-    });
-  }, []);
-
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [otherName, setOtherName] = useState("")
-  const [bvn, setBvn] = useState("")
-
-
-  const handleChange = (e) => {
-
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-
-  };
-
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [otherName, setOtherName] = useState("");
+  const [bvn, setBvn] = useState("");
 
   useEffect(() => {
     const verifiedPhone = localStorage.getItem("verifiedPhone");
     if (verifiedPhone) {
-      setFormData(prev => ({
-        ...prev,
-        phoneNumber: verifiedPhone
-      }));
+      setFormData(prev => ({ ...prev, phoneNumber: verifiedPhone }));
       setAccountNumber(verifiedPhone.replace("+234", "")); // display at top
     }
   }, []);
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-
+  // ----------------- LOGIN -----------------
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
-
-      const res = await axios.post("https://tal-bank-9dzh.vercel.app/api/users/login", {
+      const res = await axios.post(`${API_URL}/api/users/login`, {
         accountNumber: formData.accountNumber,
-        password: formData.password
+        password: formData.password,
       });
 
       const { user, token } = res.data;
-
       localStorage.setItem("authToken", token);
       localStorage.setItem("pinCreated", user.pinCreated);
 
       alert("Login successful");
-
       navigate("/dashboard");
-
     } catch (error) {
-
+      console.log(error.response?.data);
       alert(error.response?.data?.message || "Login failed");
-
     }
   };
 
-
-
-
-  // REGISTER
+  // ----------------- REGISTER -----------------
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -95,13 +69,13 @@ const AuthPage = () => {
         return;
       }
 
-      const res = await axios.post("https://tal-bank-9dzh.vercel.app/api/users/register", {
-        phoneNumber: verifiedPhone, // backend uses to generate accountNumber
+      const res = await axios.post(`${API_URL}/api/users/register`, {
+        phoneNumber: verifiedPhone,
         firstName,
         lastName,
         otherName,
         bvn,
-        password: formData.password
+        password: formData.password,
       });
 
       const generatedAccount = res.data.user.accountNumber;
@@ -120,9 +94,7 @@ const AuthPage = () => {
   };
 
   return (
-
-    <div className=" mx-auto min-h-screen bg-white px-5 py-4">
-
+    <div className="mx-auto min-h-screen bg-white px-5 py-4">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <IoArrowBack onClick={() => navigate('/')} className="text-xl cursor-pointer" />
@@ -138,52 +110,35 @@ const AuthPage = () => {
         {isLogin ? "Log in to your account" : "Create an Account"}
       </h2>
 
-
       {/* REGISTER */}
       {!isLogin && (
-
         <form onSubmit={handleRegister}>
-
-          {/* ACCOUNT NUMBER AT TOP */}
-          {/* ACCOUNT NUMBER */}
           <input
             value={accountNumber}
             disabled
             className="w-full bg-gray-200 rounded-xl p-4 mb-4 outline-none"
             placeholder="Account Number"
           />
-
-
-
-          {/* FIRST NAME */}
           <input
             placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
             className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
           />
-
-          {/* LAST NAME */}
           <input
             placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
             className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
           />
-
-          {/* OTHER NAME */}
           <input
             placeholder="Other Name (Optional)"
             onChange={(e) => setOtherName(e.target.value)}
             className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
           />
-
-          {/* BVN */}
           <input
             placeholder="BVN"
             onChange={(e) => setBvn(e.target.value)}
             className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
           />
-
-          {/* PASSWORD */}
           <input
             type="password"
             name="password"
@@ -192,35 +147,27 @@ const AuthPage = () => {
             onChange={handleChange}
             className="w-full bg-gray-100 rounded-xl p-4 mb-4 outline-none"
           />
-
           <button
             type="submit"
             className="w-full bg-amber-500 text-white py-4 rounded-full font-semibold"
           >
             REGISTER
           </button>
-
         </form>
-
       )}
-
-
 
       {/* LOGIN */}
       {isLogin && (
-
         <form onSubmit={handleLogin} className="space-y-4">
           <input
             type="text"
+            name="accountNumber"
             placeholder="Account Number"
             value={formData.accountNumber}
             maxLength={10}
-            onChange={(e) =>
-              setFormData({ ...formData, accountNumber: e.target.value })
-            }
+            onChange={handleChange}
             className="w-full bg-gray-100 rounded-xl p-4 outline-none"
           />
-
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
@@ -231,13 +178,12 @@ const AuthPage = () => {
               className="w-full bg-gray-100 rounded-xl p-4 pr-12 outline-none"
             />
             <span
-              onClick={() => setShowPassword((prev) => !prev)}
+              onClick={() => setShowPassword(prev => !prev)}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
-
           <button
             type="submit"
             className="w-full bg-amber-500 text-white py-4 rounded-full font-semibold"
@@ -245,12 +191,10 @@ const AuthPage = () => {
             LOGIN
           </button>
         </form>
-
       )}
 
       {/* Switch */}
       <div className="text-center text-sm text-gray-600 mt-6">
-
         {isLogin ? (
           <>
             Don't have an account?
@@ -272,13 +216,9 @@ const AuthPage = () => {
             </span>
           </>
         )}
-
       </div>
-
     </div>
-
   );
 };
 
 export default AuthPage;
-
