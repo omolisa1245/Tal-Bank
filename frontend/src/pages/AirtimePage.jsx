@@ -51,7 +51,7 @@ const AirtimePage = () => {
 
         try {
             const res = await axios.get(
-                "https://tal-bank-9dzh.vercel.app/api/users/check-pin",
+                "https://tal-bank-sandy.vercel.app/api/users/check-pin",
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
