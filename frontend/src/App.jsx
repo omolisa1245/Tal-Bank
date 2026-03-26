@@ -27,7 +27,7 @@ import AuthPage from './pages/AuthPage';
 import BottomNav from './component/BottonNav';
 import Register from './pages/Register';
 import VerifyOTP from './pages/VerifyOTP';
-import SendMoney from './pages/sendMoney';
+import SendMoney from './pages/SendMoney';
 import DepositMoney from './pages/DepositMoney';
 import AirtimeHistoryPage from './pages/AirtimeHistoryPage';
 import DataHistoryPage from './pages/DataHistoryPage';
