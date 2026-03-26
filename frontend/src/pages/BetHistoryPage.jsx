@@ -19,7 +19,7 @@ const BetHistoryPage = () => {
                 const token = localStorage.getItem("authToken");
 
                 const res = await axios.get(
-                    "https://tal-bank-9dzh.vercel.app/api/betting/history",
+                    "https://tal-bank-sandy.vercel.app/api/betting/history",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

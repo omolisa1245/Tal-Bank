@@ -77,7 +77,7 @@ const Register = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("https://tal-bank-9dzh.vercel.app/api/users/login", {
+            const res = await axios.post("https://tal-bank-sandy.vercel.app/api/users/login", {
                 accountNumber: formData.accountNumber,
                 password: formData.password
             });
@@ -114,7 +114,7 @@ const Register = () => {
         try {
 
             const res = await axios.post(
-                "http://localhost:4000/api/auth/send-otp",
+                "https://tal-bank-sandy.vercel.app/api/auth/send-otp",
                 { phoneNumber: formattedPhone }
             )
 

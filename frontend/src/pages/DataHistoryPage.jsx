@@ -13,7 +13,7 @@ const DataHistoryPage = () => {
         const fetchHistory = async () => {
             try {
                 const token = localStorage.getItem("authToken");
-                const res = await axios.get("https://tal-bank-9dzh.vercel.app/api/data/history", { headers: { Authorization: `Bearer ${token}` } });
+                const res = await axios.get("https://tal-bank-sandy.vercel.app/api/data/history", { headers: { Authorization: `Bearer ${token}` } });
                 setHistory(res.data.data);
             } catch (err) {
                 console.error(err);

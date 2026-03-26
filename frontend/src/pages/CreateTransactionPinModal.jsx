@@ -17,7 +17,7 @@ const CreateTransactionPinModal = ({ onClose }) => {
             console.log("TOKEN:", token);
 
             const res = await axios.post(
-                "https://tal-bank-9dzh.vercel.app/api/users/set-pin",
+                "https://tal-bank-sandy.vercel.app/api/users/set-pin",
                 { pin },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

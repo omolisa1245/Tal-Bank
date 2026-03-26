@@ -18,7 +18,7 @@ const AirtimeHistoryPage = () => {
                 const token = localStorage.getItem("authToken");
 
                 const res = await axios.get(
-                    "https://tal-bank-9dzh.vercel.app/airtime/history",
+                    "https://tal-bank-sandy.vercel.app/api/airtime/history",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

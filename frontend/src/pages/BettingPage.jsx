@@ -46,7 +46,7 @@ const BettingPage = () => {
     const checkUserPin = async () => {
         try {
             const res = await axios.get(
-                "https://tal-bank-9dzh.vercel.app/api/users/check-pin",
+                "https://tal-bank-sandy.vercel.app/api/users/check-pin",
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             return res.data.hasPin;
@@ -83,14 +83,14 @@ const BettingPage = () => {
 
             // Verify PIN
             await axios.post(
-                "https://tal-bank-9dzh.vercel.app/api/users/verify-pin",
+                "https://tal-bank-sandy.vercel.app/api/users/verify-pin",
                 { pin: enteredPin },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
             // Process Betting payment
             await axios.post(
-                "https://tal-bank-9dzh.vercel.app/api/betting/pay",
+                "https://tal-bank-sandy.vercel.app/api/betting/pay",
                 {
                     provider: selectedProvider,
                     bettingId: userId,

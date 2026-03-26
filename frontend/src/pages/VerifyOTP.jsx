@@ -94,7 +94,7 @@ const VerifyOTP = () => {
 
     try {
       const res = await axios.post(
-        "https://tal-bank-9dzh.vercel.app/api/auth/verify-otp",
+        "https://tal-bank-sandy.vercel.app/api/auth/verify-otp",
         { phoneNumber, otp: code }
       );
       console.log(res.data);

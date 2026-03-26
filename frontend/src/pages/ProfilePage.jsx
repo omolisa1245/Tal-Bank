@@ -20,7 +20,7 @@ const ProfilePage = () => {
         const fetchUser = async () => {
             try {
                 if (!token) return;
-                const res = await axios.get("https://tal-bank-9dzh.vercel.app/api/users/profile", {
+                const res = await axios.get("https://tal-bank-sandy.vercel.app/api/users/profile", {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 console.log(res.data); // <--- check the shape of your response

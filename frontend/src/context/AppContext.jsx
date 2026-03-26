@@ -28,7 +28,7 @@ export const AppProvider = ({ children }) => {
       }
 
       try {
-        const res = await axios.get("https://tal-bank-9dzh.vercel.app/api/users/profile", {
+        const res = await axios.get("https://tal-bank-sandy.vercel.app/api/users/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(res.data.user || res.data);
@@ -53,7 +53,7 @@ export const AppProvider = ({ children }) => {
       const token = localStorage.getItem("authToken");
       if (!token) return;
 
-      const res = await axios.get("https://tal-bank-9dzh.vercel.app/api/wallet/balance", {
+      const res = await axios.get("https://tal-bank-sandy.vercel.app/api/wallet/balance", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -74,7 +74,7 @@ export const AppProvider = ({ children }) => {
       const token = localStorage.getItem("authToken");
       if (!token) return;
 
-      const res = await axios.get("https://tal-bank-9dzh.vercel.app/transactions/history", {
+      const res = await axios.get("https://tal-bank-sandy.vercel.app/transactions/history", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
