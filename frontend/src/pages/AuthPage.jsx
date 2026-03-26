@@ -60,7 +60,7 @@ const AuthPage = () => {
 
     try {
 
-      const res = await axios.post("http://localhost:4000/api/users/login", {
+      const res = await axios.post("https://tal-bank-9dzh.vercel.app/api/users/login", {
         accountNumber: formData.accountNumber,
         password: formData.password
       });
@@ -95,7 +95,7 @@ const AuthPage = () => {
         return;
       }
 
-      const res = await axios.post("http://localhost:4000/api/users/register", {
+      const res = await axios.post("https://tal-bank-9dzh.vercel.app/api/users/register", {
         phoneNumber: verifiedPhone, // backend uses to generate accountNumber
         firstName,
         lastName,

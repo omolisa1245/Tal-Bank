@@ -51,7 +51,7 @@ const AirtimePage = () => {
 
         try {
             const res = await axios.get(
-                "http://localhost:4000/api/users/check-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/check-pin",
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
@@ -100,14 +100,14 @@ const AirtimePage = () => {
 
             // Verify PIN with backend
             await axios.post(
-                "http://localhost:4000/api/users/verify-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/verify-pin",
                 { pin: enteredPin },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
             // Perform Airtime transaction
             await axios.post(
-                "http://localhost:4000/api/airtime/buy-airtime",
+                "https://tal-bank-9dzh.vercel.app/api/airtime/buy-airtime",
                 {
                     phoneNumber: phone,
                     amount: Number(amount),

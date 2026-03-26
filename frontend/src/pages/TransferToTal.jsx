@@ -24,7 +24,7 @@ const TransferToTal = () => {
         try {
             const token = localStorage.getItem("authToken");
             const res = await axios.get(
-                `http://localhost:4000/api/wallet/resolve/${number}`,
+                `https://tal-bank-9dzh.vercel.app/api/wallet/resolve/${number}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             setReceiverName(res.data.name);

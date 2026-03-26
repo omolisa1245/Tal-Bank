@@ -15,7 +15,7 @@ const checkUserPin = async () => {
         if (!token) throw new Error("No token found");
 
         const res = await axios.get(
-            "http://localhost:4000/api/users/check-pin",
+            "https://tal-bank-9dzh.vercel.app/api/users/check-pin",
             { headers: { Authorization: `Bearer ${token}` } }
         );
         return res.data.hasPin;
@@ -81,7 +81,7 @@ const SendMoney = () => {
 
 
             await axios.post(
-                "http://localhost:4000/api/users/verify-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/verify-pin",
                 { pin: enteredPin },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -94,7 +94,7 @@ const SendMoney = () => {
             console.log("Remark:", remark);
 
             const transferRes = await axios.post(
-                "http://localhost:4000/api/transactions/transfer",
+                "https://tal-bank-9dzh.vercel.app/api/transactions/transfer",
                 {
                     accountNumber: accountNumber,
                     amount: Number(amount),
@@ -130,7 +130,7 @@ const SendMoney = () => {
             if (!token) return;
 
             const res = await axios.get(
-                "http://localhost:4000/api/users/check-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/check-pin",
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 

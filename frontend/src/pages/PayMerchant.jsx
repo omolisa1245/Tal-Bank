@@ -51,7 +51,7 @@ export default function PayMerchant() {
       const token = localStorage.getItem("authToken");
 
       const res = await axios.post(
-        "http://localhost:4000/api/merchant/pay-merchant",
+        "https://tal-bank-9dzh.vercel.app/api/merchant/pay-merchant",
         {
           merchantId,
           merchantName: selectedVendor?.name || "Merchant",

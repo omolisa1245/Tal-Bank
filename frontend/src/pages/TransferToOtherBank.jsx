@@ -56,7 +56,7 @@ const TransferToOtherBank = () => {
     const fetchBanks = async () => {
         try {
             const res = await axios.get(
-                "http://localhost:4000/api/paystack/banks",
+                "https://tal-bank-9dzh.vercel.app/api/paystack/banks",
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }
@@ -95,7 +95,7 @@ const TransferToOtherBank = () => {
             setLoading(true);
 
             const res = await axios.post(
-                "http://localhost:4000/api/paystack/resolve-account",
+                "https://tal-bank-9dzh.vercel.app/api/paystack/resolve-account",
                 { account_number: acc, bank_code: code },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -117,7 +117,7 @@ const TransferToOtherBank = () => {
             setLoading(true);
 
             const recipientRes = await axios.post(
-                "http://localhost:4000/api/paystack/create-recipient",
+                "https://tal-bank-9dzh.vercel.app/api/paystack/create-recipient",
                 {
                     account_number: accountNumber,
                     bank_code: selectedBank.code,
@@ -131,7 +131,7 @@ const TransferToOtherBank = () => {
             const recipientCode = recipientRes.data.data.recipient_code;
 
             await axios.post(
-                "http://localhost:4000/api/paystack/transfer-bank",
+                "https://tal-bank-9dzh.vercel.app/api/paystack/transfer-bank",
                 {
                     recipient_code: recipientCode,
                     amount: Number(amount),

@@ -55,14 +55,14 @@ export default function DstvPage() {
 
             // Verify PIN
             await axios.post(
-                "http://localhost:4000/api/users/verify-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/verify-pin",
                 { pin: enteredPin },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
             // Process DStv payment
             await axios.post(
-                "http://localhost:4000/api/tv/pay",
+                "https://tal-bank-9dzh.vercel.app/api/tv/pay",
                 {
                     smartcard,
                     package: selectedPackage.name,

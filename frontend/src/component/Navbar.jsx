@@ -24,7 +24,7 @@ const Navbar = () => {
                 const token = localStorage.getItem("authToken");
                 if (!token) return;
 
-                const res = await axios.get("http://localhost:4000/api/users/profile", {
+                const res = await axios.get("https://tal-bank-9dzh.vercel.app/api/users/profile", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 

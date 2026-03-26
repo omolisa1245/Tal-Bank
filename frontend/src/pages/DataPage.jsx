@@ -51,7 +51,7 @@ const DataPage = () => {
     const checkUserPin = async () => {
         try {
             const res = await axios.get(
-                "http://localhost:4000/api/users/check-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/check-pin",
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             return res.data.hasPin;
@@ -93,14 +93,14 @@ const DataPage = () => {
 
             // Verify PIN with backend
             await axios.post(
-                "http://localhost:4000/api/users/verify-pin",
+                "https://tal-bank-9dzh.vercel.app/api/users/verify-pin",
                 { pin: enteredPin },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
             // Perform Data purchase
             await axios.post(
-                "http://localhost:4000/api/data/buy",
+                "https://tal-bank-9dzh.vercel.app/api/data/buy",
                 {
                     phoneNumber: phone,
                     network: selectedNetwork.name,

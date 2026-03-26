@@ -18,7 +18,7 @@ const DepositMoney = () => {
             const token = localStorage.getItem("authToken");
 
             const res = await axios.post(
-                "http://localhost:4000/api/wallet/deposit",
+                "https://tal-bank-9dzh.vercel.app/api/wallet/deposit",
                 { amount: Number(amount) },
                 {
                     headers: { Authorization: `Bearer ${token}` }
