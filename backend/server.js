@@ -26,7 +26,7 @@ app.use(express.json());
 
 // ✅ CORS CONFIG (FIXED)
 app.use(cors({
-  origin: "https://tal-bank-r7q4.vercel.app",
+  origin: "https://tal-bank-j87e.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -35,7 +35,7 @@ app.use(cors({
 // ✅ Handle preflight WITHOUT crashing
 app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Origin", "https://tal-bank-r7q4.vercel.app");
+    res.header("Access-Control-Allow-Origin", "https://tal-bank-j87e.vercel.app");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     res.header("Access-Control-Allow-Credentials", "true");
