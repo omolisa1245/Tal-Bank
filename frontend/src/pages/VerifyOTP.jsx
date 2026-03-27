@@ -109,7 +109,7 @@ const VerifyOTP = () => {
 
   return (
 
-    <div className="min-h-screen w-full flex flex-col pl-[4rem]  bg-amber-50">
+    <div className="min-h-screen w-full flex flex-col px-10  bg-amber-50">
       <div className="w-full">
         {/* Header */}
         <div className="flex  items-center gap-70 pt-6">
@@ -124,7 +124,7 @@ const VerifyOTP = () => {
           </h2>
         </div>
 
-        <div className=" flex ml-13 flex-col  ">
+        <div className=" flex  flex-col  ">
           {/* Icon */}
           <div className=" flex   mb-6">
             <img className="bg-amber-100 p-3 w-25 ml-17 rounded-full" src={security} alt="" />
@@ -150,7 +150,7 @@ const VerifyOTP = () => {
 
     
 
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-[80%]  text-center">
+      <div className="bg-white p-8 rounded-2xl shadow-xl w-[100%]  text-center">
 
         <h2 className="text-2xl font-bold text-amber-600 mb-2">
           Verify OTP
