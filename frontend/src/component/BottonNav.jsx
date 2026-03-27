@@ -45,7 +45,7 @@ const BottomNav = () => {
     ];
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 min-w-sm mx-auto bg-white flex justify-around py-3 shadow-2xl">
+        <div className="fixed bottom-0 left-0 right-0 min-w-sm -ml-2 bg-white flex justify-around py-3 shadow-2xl">
 
             {menu.map((item) => (
 
