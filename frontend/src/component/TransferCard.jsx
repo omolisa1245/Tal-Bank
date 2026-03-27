@@ -13,7 +13,7 @@ function TransferCard() {
             <div className="bg-white rounded-2xl p-4 shadow">
                 <h3 className="font-semibold mb-4">Money Transfer</h3>
 
-                <div className="flex justify-between text-center px-4">
+                <div className="flex justify-between text-center">
                     <div onClick={() => navigate('/to-tal')} className="flex flex-col cursor-pointer items-center">
                         <div className="bg-indigo-100 p-2 rounded-xl text-xl"><MdPersonPinCircle className='text-3xl text-blue-400' /></div>
                         <p className="text-sm mt-1">To TalBank</p>
