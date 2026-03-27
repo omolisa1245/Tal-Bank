@@ -112,7 +112,7 @@ const VerifyOTP = () => {
     <div className="min-h-screen w-full flex flex-col px-2  bg-amber-50">
       <div className="w-full">
         {/* Header */}
-        <div className="flex  items-center gap-40 ml-4 pt-6">
+        <div className="flex  items-center gap-48 ml-6 pt-6">
 
           <FaArrowLeft
             onClick={() => navigate(-1)}
@@ -126,13 +126,13 @@ const VerifyOTP = () => {
 
         <div className=" flex ml-7 flex-col  ">
           {/* Icon */}
-          <div className=" flex   mb-6">
+          <div className=" flex  ml-12 mb-6">
             <img className="bg-amber-100 p-3 w-25 ml-17 rounded-full" src={security} alt="" />
           </div>
 
           {/* Title */}
 
-          <h1 className="text-xl ml-10 font-bold mb-2">Verification Code</h1>
+          <h1 className="text-xl ml-16 font-bold mb-2">Verification Code</h1>
           <p className="text-gray-500 text-center mb-4 w-[270px] mt-3">
             We have sent the verification code to your phone number
           </p>
