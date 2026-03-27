@@ -124,15 +124,15 @@ const VerifyOTP = () => {
           </h2>
         </div>
 
-        <div className=" flex ml-17 flex-col  ">
+        <div className=" flex ml-13 flex-col  ">
           {/* Icon */}
           <div className=" flex   mb-6">
-            <img className="bg-amber-100 p-3 w-25 ml-24 rounded-full" src={security} alt="" />
+            <img className="bg-amber-100 p-3 w-25 ml-17 rounded-full" src={security} alt="" />
           </div>
 
           {/* Title */}
 
-          <h1 className="text-xl ml-14 font-bold mb-2">Verification Code</h1>
+          <h1 className="text-xl ml-10 font-bold mb-2">Verification Code</h1>
           <p className="text-gray-500 text-center mb-4 w-[270px] mt-3">
             We have sent the verification code to your phone number
           </p>
