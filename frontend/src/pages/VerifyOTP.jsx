@@ -126,7 +126,7 @@ const VerifyOTP = () => {
 
         <div className=" flex ml-7 flex-col  ">
           {/* Icon */}
-          <div className=" flex  ml-12 mb-6">
+          <div className=" flex  ml-6 mb-6">
             <img className="bg-amber-100 p-3 w-25 ml-17 rounded-full" src={security} alt="" />
           </div>
 
