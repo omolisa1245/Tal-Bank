@@ -26,7 +26,7 @@ const Dashboard = () => {
     }, [pinCreated]);
 
     return (
-        <div className=" min-h-screen">
+        <div className=" min-h-screen px-2">
             <Navbar />
 
             <div className="space-y-4">

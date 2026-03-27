@@ -46,7 +46,7 @@ const hideBottomNav = hiddenRoutes.includes(location.pathname);
 
   return (
     <>
-      <div className="min-h-screen w-screen bg-gray-100 pb-12 px-2 ">
+      <div className="min-h-screen w-screen bg-gray-100 pb-12  ">
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/support" element={<Support />} />
