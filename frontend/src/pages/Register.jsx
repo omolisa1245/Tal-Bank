@@ -136,16 +136,7 @@ const Register = () => {
 
     return (
         <div className="bg-amber-50  w-full flex flex-col items-center  h-screen">
-            <div className="flex items-center gap-130  px-8 pt-5 ">
-
-                <FaArrowLeft
-                    onClick={() => navigate(-1)}
-                    className="text-xl cursor-pointer"
-                />
-                <h2 className="text-sm font-bold mb-2">
-                    Help
-                </h2>
-            </div>
+         
             <div className="flex flex-col mb-13 text-center">
                 <img className="w-50 ml-12" src={logo} alt="" />
                 <h1 className="text-xl text-center flex ml-12 font-bold -mt-7 ">

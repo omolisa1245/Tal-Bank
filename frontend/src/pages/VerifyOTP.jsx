@@ -109,10 +109,10 @@ const VerifyOTP = () => {
 
   return (
 
-    <div className="min-h-screen w-full flex flex-col pl-[8rem]  bg-amber-50">
+    <div className="min-h-screen w-full flex flex-col  bg-amber-50">
       <div className="w-full">
         {/* Header */}
-        <div className="flex  items-center gap-105 pt-6">
+        <div className="flex  items-center gap-70 pt-6">
 
           <FaArrowLeft
             onClick={() => navigate(-1)}
