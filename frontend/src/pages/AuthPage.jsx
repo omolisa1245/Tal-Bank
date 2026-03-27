@@ -46,7 +46,7 @@ const AuthPage = () => {
 
       const { user, token } = res.data;
       localStorage.setItem("authToken", token);
-      localStorage.setItem("pinCreated", JSON.stringify(user.pinCreated));
+      localStorage.setItem("pinCreated", user.pinCreated);
 
       alert("Login successful");
       navigate("/dashboard");
@@ -92,7 +92,7 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="mx-auto min-h-screen bg-white  py-4">
+    <div className="mx-auto w-full min-h-screen bg-white px-15 py-4">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <IoArrowBack onClick={() => navigate('/')} className="text-xl cursor-pointer" />
