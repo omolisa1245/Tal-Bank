@@ -92,7 +92,7 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="mx-auto min-h-screen bg-white px-5 py-4">
+    <div className="mx-auto min-h-screen bg-white  py-4">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <IoArrowBack onClick={() => navigate('/')} className="text-xl cursor-pointer" />
