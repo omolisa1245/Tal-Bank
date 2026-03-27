@@ -46,7 +46,7 @@ const AuthPage = () => {
 
       const { user, token } = res.data;
       localStorage.setItem("authToken", token);
-      localStorage.setItem("pinCreated", user.pinCreated);
+      localStorage.setItem("pinCreated", JSON.stringify(user.pinCreated));
 
       alert("Login successful");
       navigate("/dashboard");

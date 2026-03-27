@@ -287,6 +287,7 @@ export const resetTransactionPin = async (req, res) => {
     const hashedPin = await bcrypt.hash(newPin, 10)
 
     user.pin = hashedPin
+    user.pinCreated = true
     user.otp = null
     user.otpExpires = null
 
