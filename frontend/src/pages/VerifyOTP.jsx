@@ -112,7 +112,7 @@ const VerifyOTP = () => {
     <div className="min-h-screen w-full flex flex-col px-2  bg-amber-50">
       <div className="w-full">
         {/* Header */}
-        <div className="flex  items-center gap-35 pt-6">
+        <div className="flex  items-center gap-40 ml-4 pt-6">
 
           <FaArrowLeft
             onClick={() => navigate(-1)}
@@ -124,7 +124,7 @@ const VerifyOTP = () => {
           </h2>
         </div>
 
-        <div className=" flex ml-2 flex-col  ">
+        <div className=" flex ml-7 flex-col  ">
           {/* Icon */}
           <div className=" flex   mb-6">
             <img className="bg-amber-100 p-3 w-25 ml-17 rounded-full" src={security} alt="" />
