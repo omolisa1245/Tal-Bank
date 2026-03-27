@@ -74,7 +74,7 @@ export const AppProvider = ({ children }) => {
       const token = localStorage.getItem("authToken");
       if (!token) return;
 
-      const res = await axios.get("https://tal-bank-sandy.vercel.app/transactions/history", {
+      const res = await axios.get("https://tal-bank-sandy.vercel.app/api/transactions/history", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

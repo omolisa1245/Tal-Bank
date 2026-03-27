@@ -20,7 +20,7 @@ const TransferConfirm = ({ open, onClose, amount, accountNumber, receiverName, o
 
     return (
         <div
-            className={`fixed  left-0 right-0 top-50 flex items-end justify-center transition-all duration-300 ${open ? "visible" : "invisible"
+            className={`fixed  left-0 right-0 top-57 flex items-end justify-center transition-all duration-300 ${open ? "visible" : "invisible"
                 }`}
         >
 
